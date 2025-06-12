@@ -1,16 +1,15 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [tailwindcss(),
-    react()],
+  plugins: [tailwindcss(), react()],
+  base: process.env.VITE_BASE_PATH || "/Marvitech-Auto",
   server: {
     port: 5000,
     hmr: {
       overlay: false,
     },
   },
-  
 });
